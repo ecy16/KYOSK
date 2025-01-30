@@ -9,13 +9,28 @@ import { Product } from '../../models/product.model';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
+  filteredProducts: Product[] = [];
+  searchQuery: string = '';
+
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit() {
-    this.productService.getProducts().subscribe((data) => {
-      this.products = data;
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+      this.filteredProducts = products; // Initially, show all products
     });
-    console.log(this.products,'Products')
   }
+
+
+  filterProducts() {
+    if (this.searchQuery.trim()) {
+      this.filteredProducts = this.products.filter((product) =>
+        product.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+    } else {
+      this.filteredProducts = this.products; // Show all products if search query is empty
+    }
+  }
+
 }
