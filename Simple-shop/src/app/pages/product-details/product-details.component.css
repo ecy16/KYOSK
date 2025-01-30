@@ -1,27 +1,28 @@
 .product-images {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 10px;
   }
   
   .product-images img {
-    width: 50%; 
+    width: 80%;  /* Adjusted width to make images smaller */
     height: auto;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 4px;
+    margin: 0 auto;  /* Center image horizontally */
   }
   
   @media (min-width: 768px) {
     .product-images {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 10px;
     }
   
     .product-images img {
-      width: 50%; 
-      border-radius: 4px;
+      width: 90%;  /* Slightly larger on bigger screens, but still smaller than 100% */
+      border-radius: 5px;
+      margin: 0 auto;  /* Center image horizontally */
     }
   }
   

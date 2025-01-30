@@ -13,17 +13,17 @@ export class HomeComponent implements OnInit {
   searchQuery: string = '';
 
   constructor(private productService: ProductService) {}
-
-
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data: Product[]) => {
-      this.products = data.map(product => ({
-        ...product,
-        images: product.images || []        
-      }));
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+      this.filteredProducts = products; 
+  
+      this.products.forEach((product) => {
+        product.images = product.images ||[]; // Assign empty array if images are not available
+      });
     });
   }
-
+  
 
 
 filterProducts() {
