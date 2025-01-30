@@ -1,0 +1,7 @@
+.row{
+    border: solid ;
+    justify-content: space-between;
+}
+.card{
+    margin: 1rem;
+}
