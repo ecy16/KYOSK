@@ -14,13 +14,17 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private productService: ProductService) {}
-
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => {
       this.products = products;
-      this.filteredProducts = products; // Initially, show all products
+      this.filteredProducts = products; 
+  
+      this.products.forEach((product) => {
+        product.images = product.images ||[]; // Assign empty array if images are not available
+      });
     });
   }
+  
 
 
   filterProducts() {
