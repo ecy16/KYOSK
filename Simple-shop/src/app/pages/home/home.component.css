@@ -1,6 +1,7 @@
 .row{
-    border: solid ;
+    border: solid 1px ;
     justify-content: space-between;
+    border-radius: 2px;
 }
 .card{
     margin: 1rem;
