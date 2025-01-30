@@ -1,0 +1,27 @@
+.product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .product-images img {
+    width: 50%; 
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 4px;
+  }
+  
+  @media (min-width: 768px) {
+    .product-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+  
+    .product-images img {
+      width: 50%; 
+      border-radius: 4px;
+    }
+  }
+  

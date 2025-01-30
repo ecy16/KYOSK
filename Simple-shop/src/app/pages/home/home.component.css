@@ -5,3 +5,28 @@
 .card{
     margin: 1rem;
 }
+.product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .product-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 768px) {
+    .product-images {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  
+    .product-images img {
+      border-radius: 5px;
+    }
+  }
+  
