@@ -1,1 +1,12 @@
-<p>categories works!</p>
+<div class="container mt-4">
+    <h3>All Categories</h3>
+    <ul class="list-group">
+        <li *ngFor="let category of categories" class="list-group-item">
+          {{ category.name }}  <!-- Assuming each category has a 'name' property -->
+        </li>
+      </ul>
+
+      <button class="btn mt-4" routerLink="">Back</button>
+
+  </div>
+  

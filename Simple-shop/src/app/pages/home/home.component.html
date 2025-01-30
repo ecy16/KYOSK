@@ -6,7 +6,8 @@
       placeholder="Search products..."
       [(ngModel)]="searchQuery"
       (input)="filterProducts()" >
-    <div class="row">
+      <button class="btn mb-2" routerLink="categories">Categories</button>
+      <div class="row">
       <div *ngFor="let product of filteredProducts" class="col-md-4">
         <div class="card">
           <img [src]="product.image" class="card-img-top" [alt]="product.title">
@@ -17,6 +18,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </div>
   
